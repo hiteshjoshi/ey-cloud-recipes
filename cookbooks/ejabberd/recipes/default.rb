@@ -8,12 +8,12 @@ script "download Ejabberd" do
   SH
 end
 
-unless `uname`.strip == 'Darwin'
-  user "ejabberd" do
-    not_if "grep ejabberd /etc/passwd"
-    gid "ejabberd"
-  end
-end
+# unless `uname`.strip == 'Darwin'
+#   user "ejabberd" do
+#     not_if "grep ejabberd /etc/passwd"
+#     gid "ejabberd"
+#   end
+# end
 
 script "build Ejabberd" do
   interpreter "bash"
