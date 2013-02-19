@@ -12,7 +12,6 @@ unless `uname`.strip == 'Darwin'
   user "ejabberd" do
     not_if "grep ejabberd /etc/passwd"
     gid "ejabberd"
-    system true
   end
 end
 
