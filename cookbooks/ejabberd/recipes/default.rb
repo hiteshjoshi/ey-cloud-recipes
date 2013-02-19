@@ -1,12 +1,12 @@
-EJABBV = "2.1.11"
+EJABBV = "2.1.9"
 
 script "download Ejabberd" do
   not_if "test -d /tmp/ejabberd-#{EJABBV}"
   interpreter "bash"
   cwd "/tmp"
   code <<-SH
-  wget http://www.process-one.net/downloads/ejabberd/2.1.11/ejabberd-2.1.11.tgz
-  tar xzf ejabberd-2.1.11.tgz
+  wget http://www.process-one.net/downloads/ejabberd/#{EJABBV}/ejabberd-#{EJABBV}.tar.gz
+  tar xzf ejabberd-#{EJABBV}.tar.gz
   SH
 end
 
@@ -14,7 +14,7 @@ unless `uname`.strip == 'Darwin'
   user "ejabberd" do
     not_if "grep ejabberd /etc/passwd"
     gid "ejabberd"
-    #system true
+    system true
   end
 end
 
@@ -32,4 +32,3 @@ template "/etc/ejabberd/ejabberd.cfg" do
   owner `uname`.strip == 'Darwin' ? "root" : "ejabberd"
   mode 0640
 end
-
