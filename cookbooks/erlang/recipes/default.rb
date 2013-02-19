@@ -8,9 +8,10 @@ execute "unpack Erlang/OTP" do
   command "tar xzf /tmp/otp_src_R14B02.tar.gz -C /tmp"
 end
 
-unless `uname`.strip == 'Darwin'
-  package "libncurses5-dev openssl libssl-dev libsctp-dev libexpat1-dev"
-end
+# unless `uname`.strip == 'Darwin'
+#   package "build-essential"
+#   package "libncurses5-dev openssl libssl-dev libsctp-dev libexpat1-dev"
+# end
 
 script "build Erlang/OTP" do
   interpreter "bash"
