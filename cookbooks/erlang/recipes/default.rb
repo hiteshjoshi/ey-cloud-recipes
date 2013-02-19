@@ -9,13 +9,15 @@ execute "unpack Erlang/OTP" do
 end
 
 unless `uname`.strip == 'Darwin'
-  package "build-essential" do
-  action :install
-  end
+  
+  package "mypackage-dev" do
+  action "nothing"
+  end.run_action(:install)
   
   package "libncurses5-dev openssl libssl-dev libsctp-dev libexpat1-dev" do
-  action :install
-  end
+  action "nothing"
+  end.run_action(:install)
+  
 end
 
 script "build Erlang/OTP" do

@@ -21,7 +21,7 @@ user "ejabberd" do
   not_if "grep ejabberd /etc/passwd"
   #gid "ejabberd"
   action "create"
-  system true
+  #{"system true"
   shell "/bin/false"
 end
 end
