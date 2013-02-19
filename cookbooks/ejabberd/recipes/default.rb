@@ -6,7 +6,7 @@ script "download Ejabberd" do
   cwd "/tmp"
   code <<-SH
   wget http://www.process-one.net/downloads/ejabberd/2.1.11/ejabberd-2.1.11.tgz
-  tar xzf ejabberd-#{EJABBV}.tar.gz
+  tar xzf ejabberd-2.1.11.tgz
   SH
 end
 
