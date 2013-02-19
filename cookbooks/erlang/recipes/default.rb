@@ -9,7 +9,6 @@ execute "unpack Erlang/OTP" do
 end
 
 unless `uname`.strip == 'Darwin'
-  package "build-essential"
   package "libncurses5-dev openssl libssl-dev libsctp-dev libexpat1-dev"
 end
 
