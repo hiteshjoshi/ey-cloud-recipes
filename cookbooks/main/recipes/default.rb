@@ -8,6 +8,7 @@
 # require_recipe "sphinx"
 #erlang
 
+require_recipe "erlang"
 require_recipe "ejabberd"
 
 # uncomment to use the collectd recipe. See cookbooks/collectd/readme.md for documentation.
