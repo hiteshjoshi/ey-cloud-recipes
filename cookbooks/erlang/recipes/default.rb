@@ -13,7 +13,7 @@ unless `uname`.strip == 'Darwin'
   action :install
   end
   
-  package "libncurses5-dev openssl libssl-dev libsctp-dev libexpat1-dev"
+  package "libncurses5-dev openssl libssl-dev libsctp-dev libexpat1-dev" do
   action :install
   end
 end
