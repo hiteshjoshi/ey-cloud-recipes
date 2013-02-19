@@ -8,22 +8,23 @@ script "download Ejabberd" do
   SH
 end
 
-unless `uname`.strip == 'Darwin'
-  user "ejabberd" do
-    not_if "grep ejabberd /etc/passwd"
-    gid "ejabberd"
-    system true
-    shell "/bin/false"
-  end
-end
-
-# user node[:ejabberd][:user] do
-#   not_if "grep ejabberd /etc/passwd"
-#   gid "ejabberd"
-#   action :create
-#   system true
-#   shell "/bin/false"
+# unless `uname`.strip == 'Darwin'
+#   user "ejabberd" do
+#     not_if "grep ejabberd /etc/passwd"
+#     gid "ejabberd"
+#     system true
+#   end
 # end
+
+unless `uname`.strip == 'Darwin'
+user node[:ejabberd][:user] do
+  not_if "grep ejabberd /etc/passwd"
+  //gid "ejabberd"
+  action :create
+  system true
+  shell "/bin/false"
+end
+end
 
 script "build Ejabberd" do
   interpreter "bash"
