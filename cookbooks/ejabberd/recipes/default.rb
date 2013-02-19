@@ -19,7 +19,7 @@ end
 unless `uname`.strip == 'Darwin'
 user node[:ejabberd][:user] do
   not_if "grep ejabberd /etc/passwd"
-  //gid "ejabberd"
+  #gid "ejabberd"
   action :create
   system true
   shell "/bin/false"
